@@ -1,0 +1,73 @@
+```{r}
+#Recreate the following dataframe by creating vectors and using the data.frame function:
+
+Age <- c(22, 25, 26)
+Weight <- c(150, 165, 120)
+Sex <- c("M", "M", "F")
+
+df <- data.frame(Age, Weight, Sex)
+rownames(df) <- c("Sam", "Frank", "Amy")
+df
+```
+```{r}
+#Check if mtcars is a dataframe using is.data.frame()
+
+is.data.frame(mtcars)
+```
+```{r}
+#Use as.data.frame() to convert a matrix into a dataframe:
+
+mat <- matrix(1:25, nrow = 5)
+
+df <- data.frame(mat)
+colnames(df) <- c("V1", "V2", "V3", "V4", "V5")
+rownames(df) <- c(1:5)
+
+df
+```
+```{r}
+#Set the built-in data frame mtcars as a variable df. We'll use this df variable for the rest of the exercises
+
+df <- mtcars
+
+#Display the first 6 rows of df
+
+df[1:6,]
+```
+```{r}
+#What is the average mpg value for all the cars?
+mean(df$mpg)
+```
+```{r}
+#Select the rows where all cars have 6 cylinders (cyl column)
+
+sub1 <- subset(df, df$cyl == 6)
+sub1
+```
+```{r}
+#Select the columns am,gear, and carb
+
+df[, c("am", "gear", "carb")]
+```
+```{r}
+#Create a new column called performance, which is calculated by hp/wt.
+
+df$perfomance <- df$hp / df$wt
+df
+```
+```{r}
+#Your performance column will have 2 decimal place precision
+
+df$perfomance <- round(df$perfomance, digits = 2)
+head(df)
+```
+```{r}
+#What is the average mpg for cars that have more than 100 hp AND a wt value of more than 2.5
+
+sub2 <- subset(df, df$hp > 100 & df$wt > 2.5)
+mean(sub2$mpg)
+```
+```{r}
+#What is the mpg of the Hornet Sportabout?
+df['Hornet Sportabout',]$mpg
+```

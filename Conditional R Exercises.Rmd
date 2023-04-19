@@ -1,0 +1,67 @@
+```{r}
+#Write a script that will print "Even Number" if the variable x is an even number, otherwise print "Not Even":
+
+x <- 3
+
+if(x %% 2 == 0){
+  print("Even Number")
+}else{
+  print("Not Even")
+}
+```
+```{r}
+#Write a script that will print 'Is a Matrix' if the variable x is a matrix, otherwise print "Not a Matrix"
+
+x <- matrix()
+
+if(is.matrix(x) == T){
+  print("Is a Matrix")
+}else{
+  "Not a Matrix"
+}
+```
+```{r}
+# Create a script that given a numeric vector x with a length 3, will print out the elements in order from high to low. You must use if,else if, and else statements for your logic
+
+x <- c(3,7,1)
+
+if (x[1] > x[2]){
+    fir <- x[1]
+    sec <- x[2]
+} else {
+    fir <- x[2]
+    sec <- x[1]
+}
+if ( x[3] > fir & x[3] > sec ) {
+    thi <- sec
+    sec <- fir
+    fir <- x[3]
+} else if ( x[3] < fir & x[3] < sec ) {
+    thi <- x[3]
+} else {
+    thi <- sec
+    sec <- x[3]
+}
+
+print(paste(fir, sec, thi))
+```
+```{r}
+#Write a script that uses if,else if, and else statements to print the max element in a numeric vector with 3 elements
+
+x <- c(20, 10, 1)
+
+if(x[1] > x[2]){
+  tempMax = x[1]
+}else{
+  tempMax = x[2]
+}
+
+if(tempMax > x[3]){
+  max = tempMax
+}else{
+  max = tempMax
+}
+
+max
+```
+

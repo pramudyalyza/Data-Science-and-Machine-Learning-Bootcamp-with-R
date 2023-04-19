@@ -1,0 +1,30 @@
+```{r}
+library(dplyr)
+head(mtcars)
+```
+```{r}
+#Return rows of cars that have an mpg value greater than 20 and 6 cylinders.
+filter(mtcars, mpg > 20 & cyl == 6)
+```
+```{r}
+#Reorder the Data Frame by cyl first, then by descending wt
+
+arrange(mtcars, cyl, desc(wt))
+```
+```{r}
+select(mtcars, mpg, hp)
+```
+```{r}
+distinct(mtcars, gear)
+```
+```{r}
+mutate(mtcars, Perfomance = hp/wt)
+```
+```{r}
+summarise(mtcars, avg_mpg = mean(mpg, na.rm = T))
+```
+```{r}
+result <- mtcars %>% filter(cyl == 6) %>% summarise(std_hp = mean(hp, na.rm = T))
+result
+```
+
